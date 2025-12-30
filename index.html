@@ -1,73 +1,193 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  <title>Ina's Book Hub</title>
+  <meta charset="UTF-8">
+  <title>Ina's Book Hub — Welcome to the Bookverse!</title>
   <style>
-    body { font-family: Arial, sans-serif; background:chocolate; margin:0; }
-    header { background:grey; color:black; padding:20px; text-align:center; }
-    .container { max-width:900px; margin:20px auto; padding:0 16px; }
-    .grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap:16px; }
-    .book { background:black; border-radius:10px; box-shadow:0 4px 10px rgba(0,0,0,0.08); padding:16px; }
-    .book h3 { margin:0 0 6px; color:#1e293b; }
-    .book p { color:#475569; margin:0 0 10px; }
-    .actions { display:flex; gap:8px; }
-    .btn { display:inline-block; background:white; color:black; text-decoration:none; padding:8px 12px; border-radius:6px; }
-    .btn.secondary { background:#334155; }
-    .ad-slot { margin:20px 0; background:#eef2ff; border:1px dashed #93c5fd; border-radius:10px; height:120px; display:flex; align-items:center; justify-content:center; color:#3b82f6; }
-    .search { margin:12px 0 20px; display:flex; gap:8px; }
-    .search input { flex:1; padding:10px; border-radius:6px; border:1px solid #cbd5e1; }
+    body { margin:0; font-family:Arial, sans-serif; }
+
+    /* Grid layout for books */
+    .library-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 16px;
+      padding: 20px;
+    }
+
+    /* Theme toggle icon */
+    .theme-toggle {
+      position: fixed;
+      top: 10px;
+      right: 10px;
+      background: none;
+      border: none;
+      font-size: 20px;
+      cursor: pointer;
+      opacity: 0.6;
+    }
+    .theme-toggle:hover { opacity: 1; }
+
+    /* Ad slot styling */
+    .ad-slot {
+      padding: 10px;
+      margin: 20px;
+      text-align: center;
+      border-radius: 8px;
+    }
+
+    /* Footer styling */
+    footer {
+      text-align: center;
+      padding: 20px;
+      font-size: 0.9em;
+    }
+    footer a {
+      margin: 0 10px;
+      text-decoration: none;
+      color: inherit;
+    }
+    footer a:hover { text-decoration: underline; }
+
+    /* Palette 1: Dark Mode */
+    .dark-mode { background:#121212; color:#EAEAEA; }
+    .dark-mode header { background:#1E90FF; color:#fff; padding:20px; text-align:center; }
+    .dark-mode .btn { background:#BB86FC; color:#fff; padding:8px 12px; border:none; border-radius:6px; }
+    .dark-mode .book { background:#1E1E1E; color:#EAEAEA; padding:16px; border-radius:8px; }
+    .dark-mode .ad-slot { background:#1E1E1E; border:1px dashed #BB86FC; color:#BB86FC; }
+    .dark-mode footer { background:#1E1E1E; color:#BB86FC; }
+
+    /* Palette 2: Warm Library */
+    .library-mode { background:#F4EDE4; color:#3B2F2F; }
+    .library-mode header { background:#6B4226; color:#fff; padding:20px; text-align:center; }
+    .library-mode .btn { background:#A67C52; color:#fff; padding:8px 12px; border:none; border-radius:6px; }
+    .library-mode .book { background:#fff; color:#3B2F2F; padding:16px; border-radius:8px; }
+    .library-mode .ad-slot { background:#FDF6EC; border:1px dashed #A67C52; color:#6B4226; }
+    .library-mode footer { background:#FDF6EC; color:#6B4226; }
+
+    /* Palette 3: Professional */
+    .professional-mode { background:#F9FAFB; color:#111827; }
+    .professional-mode header { background:#2563EB; color:#fff; padding:20px; text-align:center; }
+    .professional-mode .btn { background:#374151; color:#fff; padding:8px 12px; border:none; border-radius:6px; }
+    .professional-mode .book { background:#fff; color:#111827; padding:16px; border-radius:8px; }
+    .professional-mode .ad-slot { background:#E5E7EB; border:1px dashed #2563EB; color:#2563EB; }
+    .professional-mode footer { background:#E5E7EB; color:#2563EB; }
+
+    /* Palette 4: Monochrome */
+    .monochrome-mode { background:#1C1C1C; color:#D1D5DB; }
+    .monochrome-mode header { background:#4B5563; color:#fff; padding:20px; text-align:center; }
+    .monochrome-mode .btn { background:#9CA3AF; color:#1C1C1C; padding:8px 12px; border:none; border-radius:6px; }
+    .monochrome-mode .book { background:#2C2C2C; color:#D1D5DB; padding:16px; border-radius:8px; }
+    .monochrome-mode .ad-slot { background:#2C2C2C; border:1px dashed #9CA3AF; color:#9CA3AF; }
+    .monochrome-mode footer { background:#2C2C2C; color:#9CA3AF; }
   </style>
 </head>
 <body>
+  <!-- Theme toggle icon (dynamic ☀️ / 🌙) -->
+  <button onclick="toggleTheme()" class="theme-toggle" id="themeIcon">☀️</button>
+
   <header>
     <h1>📚 Ina's Book Hub</h1>
-    <p>Download books legally. Support the site by reading and sharing.</p>
+    <p>Welcome to the Bookverse!</p>
+    <p><em>"Where every book finds its reader"</em></p>
   </header>
 
-  <div class="container">
-    <div class="search">
-      <input id="searchInput" type="text" placeholder="Search by title or description" oninput="filterBooks()">
-    </div>
-
-    <!-- Ad slot (replace with real AdSense code later) -->
-    <div class="ad-slot">Ad space</div>
-
-    <div id="bookGrid" class="grid">
-      <!-- Example item: replace href with your real drive download link -->
-      <div class="book" data-title="Pride and Prejudice" data-desc="Public domain classic">
-        <h3>Pride and Prejudice</h3>
-        <p>Public domain classic by Jane Austen.</p>
-        <div class="actions">
-          <a class="btn" href="https://drive.google.com/uc?export=download&id=1_fYPYOSTQsnaG7BjNmTgzoXkX7a6mWTV">Download PDF</a>
-          <a class="btn secondary" href="https://example.com/affiliate-link">Buy hardcover</a>
-        </div>
-      </div>
-
-      <div class="book" data-title="Your Book Title" data-desc="Written by Mildred">
-        <h3>Your Book Title</h3>
-        <p>Written by Mildred — sample chapter included.</p>
-        <div class="actions">
-          <a class="btn" href="https://drive.google.com/uc?export=download&id=1_fYPYOSTQsnaG7BjNmTgzoXkX7a6mWTV">Download PDF</a>
-          <a class="btn secondary" href="https://example.com/affiliate-link-2">Buy print</a>
-        </div>
-      </div>
-    </div>
-
-    <!-- Another ad slot -->
-    <div class="ad-slot">Ad space</div>
+  <!-- Top Ad Slot -->
+  <div class="ad-slot">
+    <p>Top Banner Ad / Announcement</p>
   </div>
 
+  <!-- Intro Section -->
+  <section class="intro">
+    <h2>About Ina's Book Hub</h2>
+    <p>
+      Ina's Book Hub is your gateway to the Bookverse — a curated collection of timeless classics and modern reads.
+      Explore, download, and enjoy books that inspire, educate, and entertain.
+    </p>
+  </section>
+
+  <!-- README Section -->
+  <section class="readme">
+    <h2>📖 Read Me</h2>
+    <ul>
+      <li>Browse the library grid below to find books.</li>
+      <li>Use the search bar to filter by title or description.</li>
+      <li>Click “Download PDF” to get your copy instantly.</li>
+      <li>Check back often — new books are added regularly!</li>
+    </ul>
+  </section>
+
+  <!-- Library Grid -->
+  <section class="library-grid">
+    <div class="book">
+      <h2>Pride and Prejudice</h2>
+      <p>Jane Austen’s timeless classic about love, society, and self-discovery.</p>
+      <button class="btn">Download PDF</button>
+    </div>
+
+    <div class="book">
+      <h2>1984</h2>
+      <p>George Orwell’s dystopian masterpiece exploring surveillance and freedom.</p>
+      <button class="btn">Download PDF</button>
+    </div>
+
+    <div class="book">
+      <h2>To Kill a Mockingbird</h2>
+      <p>Harper Lee’s powerful novel on justice, race, and compassion.</p>
+      <button class="btn">Download PDF</button>
+    </div>
+
+    <div class="book">
+      <h2>The Great Gatsby</h2>
+      <p>F. Scott Fitzgerald’s tale of ambition, love, and the American Dream.</p>
+      <button class="btn">Download PDF</button>
+    </div>
+  </section>
+
+  <!-- Mid-Page Ad Slot -->
+  <div class="ad-slot">
+    <p>Mid‑Page Ad / Featured Book Promo</p>
+  </div>
+
+  <!-- Sidebar Ad Slot -->
+  <div class="ad-slot">
+    <p>Sidebar Ad / Special Offer</p>
+  </div>
+
+  <!-- Bottom Ad Slot -->
+  <div class="ad-slot">
+    <p>Bottom Banner Ad / Announcement</p>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 Ina's Book Hub. All rights reserved.</p>
+    <p>
+      <a href="#about">About</a> |
+      <a href="#library">Library</a> |
+      <a href="#contact">Contact</a>
+    </p>
+  </footer>
+
   <script>
-    function filterBooks() {
-      const q = document.getElementById('searchInput').value.trim().toLowerCase();
-      const items = document.querySelectorAll('#bookGrid .book');
-      items.forEach(item => {
-        const t = item.getAttribute('data-title').toLowerCase();
-        const d = item.getAttribute('data-desc').toLowerCase();
-        item.style.display = (t.includes(q) || d.includes(q)) ? '' : 'none';
-      });
+    const themes = ["dark-mode", "library-mode", "professional-mode", "monochrome-mode"];
+    let current = 0;
+
+    function toggleTheme() {
+      document.body.classList.remove(themes[current]);
+      current = (current + 1) % themes.length;
+      document.body.classList.add(themes[current]);
+
+      // Update icon based on theme
+      const icon = document.getElementById("themeIcon");
+      if (themes[current] === "dark-mode" || themes[current] === "monochrome-mode") {
+        icon.textContent = "🌙";
+      } else {
+        icon.textContent = "☀️";
+      }
     }
+
+    // Set initial theme
+    document.body.classList.add(themes[current]);
   </script>
 </body>
 </html>
