@@ -2,157 +2,176 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Ina's Book Hub | Ina's Reading Space</title>
-  <meta name="description" content="This Book Hub is Mildred's personal space for book reviews, reading tips, and literary discoveries.">
+  <title>Ina's Book Hub</title>
+  <meta name="description" content="Ina's Book Hub — a curated library of timeless public domain ebooks.">
   <style>
-    /* ===== LIBRARY LIGHT MODE ===== */
-    body.library {
-      background-color: #ffffff; /* White background */
-      color: #000000; /* Black text */
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #fdfdfd;
+      color: #333;
+      margin: 0;
+      padding: 0;
     }
-
-    body.library header,
-    body.library section {
-      background-color: #f5f5f5; /* Light grey blocks */
+    header, section {
       padding: 20px;
+      margin: 20px;
       border-radius: 8px;
-      margin-bottom: 20px;
+      background-color: #f5f5f5;
     }
-
-    body.library h1,
-    body.library h2 {
-      color: #000000;
+    h1, h2 {
+      color: #222;
     }
-
-    body.library a {
-      color: #333333;
+    .book {
+      margin-bottom: 25px;
+    }
+    .book-title {
+      font-weight: bold;
+      font-size: 1.2em;
+    }
+    .genre {
+      font-style: italic;
+      color: #666;
+    }
+    a.download-link {
+      display: inline-block;
+      margin-top: 8px;
+      background-color: #0066cc;
+      color: #fff;
+      padding: 8px 15px;
+      border-radius: 6px;
       text-decoration: none;
       font-weight: bold;
     }
-
-    body.library a:hover {
-      color: #555555;
-    }
-
-    /* ===== LAVENDER LIGHT MODE ===== */
-    body.lavender {
-      background-color: #e6e6fa; /* Soft Lavender */
-      color: #333333; /* Charcoal text */
-    }
-
-    body.lavender header,
-    body.lavender section {
-      background-color: #ffffff; /* White blocks */
-      padding: 20px;
-      border-radius: 8px;
-      margin-bottom: 20px;
-    }
-
-    body.lavender h1,
-    body.lavender h2 {
-      color: #9370db; /* Medium Purple accents */
-    }
-
-    body.lavender a {
-      color: #9370db;
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    body.lavender a:hover {
-      color: #6a5acd; /* Slate Blue hover */
-    }
-
-    /* ===== DARK MODE ===== */
-    body.dark {
-      background-color: #2F2F2F; /* Grey background */
-      color: #FFFFFF; /* White text */
-    }
-
-    body.dark header,
-    body.dark section {
-      background-color: #000000; /* Black blocks */
-      padding: 20px;
-      border-radius: 8px;
-      margin-bottom: 20px;
-    }
-
-    body.dark h1,
-    body.dark h2 {
-      color: #FFFFFF; /* White headers */
-    }
-
-    body.dark a {
-      color: #CCCCCC; /* Soft grey links */
-    }
-
-    body.dark a:hover {
-      color: #FFFFFF; /* White hover */
-    }
-
-    body.dark button {
-      background-color: #000000; /* Black button */
-      color: #FFFFFF;
-      border: 1px solid #CCCCCC;
-    }
-
-    body.dark button:hover {
-      background-color: #444444; /* Dark grey hover */
-    }
-
-    /* ===== BUTTONS ===== */
-    button {
-      margin: 5px;
-      padding: 10px 20px;
-      border-radius: 8px;
-      cursor: pointer;
-      border: none;
+    a.download-link:hover {
+      background-color: #004499;
     }
   </style>
 </head>
-<body class="library">
+<body>
   <header>
-    <h1>Welcome to Ina's Book Hub 📚</h1>
-    <p>The Only Bookverse You Clearly Need, *winks 🎀✨</p>
-    <p>Curated by Ina — a space for readers, dreamers, and book lovers.</p>
+    <h1>Read With Ina!</h1>
+    <p>Welcome to the Bookverse! ✨</p>
+    <p>Discover timeless romance and classic tales — all free, all public domain.</p>
   </header>
 
   <section>
-    <h2>About Me</h2>
-    <p>Hi guys, this is my first web app — yay! It may not be perfect, but it's my baby.</p>
-    <p>As someone with no background in coding and its shenanigans, I'd like to think I did pretty good; and what better tiny app to build on than something I love: reading.</p>
-    <p>I'm Mildred, but I also go by Ina. I created this Book Hub to share my love for reading and to connect with others who enjoy discovering new stories. This site is my personal hub where I write reviews, share recommendations, and talk about the books that inspire me.</p>
-  </section>
+    <h2>Romance Classics 💕</h2>
 
-  <section>
-    <h2>Featured Book of the Week</h2>
-    <p><strong>“Purple Hibiscus” by Chimamanda Ngozi Adichie</strong></p>
-    <p>This novel explores the harsh reality of family, faith, and freedom in Nigeria. I loved how the author captures the tension between tradition and independence. If you’re looking for a thought‑provoking read, this is a great place to start.</p>
-  </section>
+    <div class="book">
+      <span class="book-title">Pride and Prejudice</span> — Jane Austen  
+      <span class="genre">(Romance)</span>
+      <p>
+        A sparkling comedy of manners that pits wit against pride and love against prejudice. 
+        Elizabeth Bennet, sharp-tongued and independent, finds herself entangled with the enigmatic Mr. Darcy. 
+        Their journey from misunderstanding to mutual respect is filled with biting humor, social satire, 
+        and one of literature’s most beloved romances. A timeless tale that proves love can overcome even the deepest flaws.
+      </p>
+      <a href="YOUR_MONETIZED_LINK_HERE" target="_blank" class="download-link">📖 Download / Buy</a>
+    </div>
 
-  <section>
-  <h2>Explore the Bookverse!</h2>
-  <p>Check out my web app: 
-     <a href="https://inaisthatbookishperson.github.io/Book-hub-/" target="_blank">
-       Ina's Book Hub
-     </a>
-  </p>
-  </section>
+    <div class="book">
+      <span class="book-title">Jane Eyre</span> — Charlotte Brontë  
+      <span class="genre">(Romance / Gothic)</span>
+      <p>
+        A hauntingly passionate story of resilience and forbidden love. 
+        Jane Eyre, an orphan with a fiery spirit, carves her own path in a world that seeks to silence her. 
+        At Thornfield Hall, she encounters the brooding Mr. Rochester, whose dark secrets threaten their bond. 
+        Gothic mystery, moral courage, and a romance that defies convention make this novel unforgettable.
+      </p>
+      <a href="YOUR_MONETIZED_LINK_HERE" target="_blank" class="download-link">📖 Download / Buy</a>
+    </div>
 
-  <section>
-    <h2>Contact</h2>
-    <p>Want to collaborate or share recommendations? Reach out via <a href="mailto:egimildred@gmail.com">email</a>.</p>
-  </section>
+    <div class="book">
+      <span class="book-title">Persuasion</span> — Jane Austen  
+      <span class="genre">(Romance)</span>
+      <p>
+        A tender story of second chances and enduring love. 
+        Anne Elliot, persuaded years ago to reject Captain Wentworth, lives with quiet regret. 
+        When fate brings him back into her life, the question lingers: can love lost be rekindled? 
+        With Austen’s trademark elegance and insight, Persuasion shows that true affection can survive time, pride, and heartbreak.
+      </p>
+      <a href="YOUR_MONETIZED_LINK_HERE" target="_blank" class="download-link">📖 Download / Buy</a>
+    </div>
 
-  <!-- Theme Switcher Buttons -->
-  <button onclick="setTheme('library')">📖 Library Light</button>
-  <button onclick="setTheme('lavender')">🌸 Lavender Light</button>
-  <button onclick="setTheme('dark')">🌙 Dark Mode</button>
+    <div class="book">
+      <span class="book-title">The Age of Innocence</span> — Edith Wharton  
+      <span class="genre">(Romance / Society)</span>
+      <p>
+        A tale of forbidden love and social duty in glittering New York high society. 
+        Newland Archer, torn between passion and propriety, must choose between the life expected of him and the love that could set him free. 
+        Wharton’s sharp eye for social hypocrisy makes this a poignant exploration of love constrained by tradition.
+      </p>
+      <a href="YOUR_MONETIZED_LINK_HERE" target="_blank" class="download-link">📖 Download / Buy</a>
+    </div>
 
-  <script>
-    function setTheme(theme) {
-      document.body.className = theme;
-    }
-  </script>
-</body>
-</html>
+    <div class="book">
+      <span class="book-title">The Scarlet Pimpernel</span> — Baroness Orczy  
+      <span class="genre">(Romance / Adventure)</span>
+      <p>
+        A daring hero, a clever disguise, and a romance caught in the chaos of revolution. 
+        Sir Percy Blakeney, the elusive Scarlet Pimpernel, risks everything to rescue innocents from the guillotine, 
+        while his wife struggles with love, loyalty, and suspicion. Adventure and romance intertwine in this thrilling classic.
+      </p>
+      <a href="YOUR_MONETIZED_LINK_HERE" target="_blank" class="download-link">📖 Download / Buy</a>
+    </div>
+
+    <div class="book">
+      <span class="book-title">A Room with a View</span> — E.M. Forster  
+      <span class="genre">(Romance)</span>
+      <p>
+        Love blooms in Italy as Lucy Honeychurch learns to follow her heart instead of society’s rules. 
+        Torn between convention and passion, Lucy’s journey is both humorous and heartfelt. 
+        Forster’s novel is a radiant exploration of freedom, love, and the courage to embrace life’s unexpected joys.
+      </p>
+      <a href="YOUR_MONETIZED_LINK_HERE" target="_blank" class="download-link">📖 Download / Buy</a>
+    </div>
+
+    <div class="book">
+      <span class="book-title">The Phantom of the Opera</span> — Gaston Leroux  
+      <span class="genre">(Romance / Gothic)</span>
+      <p>
+        Beneath the Paris Opera House lurks a masked genius whose love borders on obsession. 
+        Christine Daaé, a young singer, becomes the object of his passion, caught between fear and fascination. 
+        A haunting love triangle unfolds, blending mystery, music, and tragedy in one unforgettable tale.
+      </p>
+      <a href="YOUR_MONETIZED_LINK_HERE" target="_blank" class="download-link">📖 Download / Buy</a>
+    </div>
+
+    <div class="book">
+      <span class="book-title">Anna Karenina</span> — Leo Tolstoy  
+      <span class="genre">(Romance / Tragedy)</span>
+      <p>
+        A sweeping tale of love, betrayal, and passion that challenges the boundaries of society. 
+        Anna Karenina’s affair with Count Vronsky defies convention but leads to devastating consequences. 
+        Tolstoy’s masterpiece captures the complexities of desire, duty, and the human heart.
+      </p>
+      <a href="YOUR_MONETIZED_LINK_HERE" target="_blank" class="download-link">📖 Download / Buy</a>
+    </div>
+
+    <div class="book">
+      <span class="book-title">The Princess of Cleves</span> — Madame de La Fayette  
+      <span class="genre">(Romance / Historical)</span>
+      <p>
+        One of the earliest modern novels, set in the glittering court of 16th‑century France. 
+        A young noblewoman must navigate love, duty, and temptation in a world where appearances mean everything. 
+        A tale of impossible choices and the cost of honor.
+      </p>
+      <a href="YOUR_MONETIZED_LINK_HERE" target="_blank" class="download-link">📖 Download / Buy</a>
+    </div>
+
+    <div class="book">
+      <span class="book-title">The Tenant of Wildfell Hall</span> — Anne Brontë  
+      <span class="genre">(Romance / Drama)</span>
+      <p>
+        A mysterious woman arrives at Wildfell Hall, sparking gossip and intrigue. 
+        Helen Graham’s past hides scandal and pain, but her strength and independence make her a heroine ahead of her time. 
+        Anne Brontë’s bold novel explores love, resilience, and the courage to defy society’s judgment.
+      </p>
+      <a href="YOUR_MONETIZED_LINK_HERE" target="_blank" class="download-link">📖 Download / Buy</a>
+    </div>
+
+    <div class="book">
+      <span class="book-title">Lady Susan</span> — Jane Austen  
+      <span class="genre">(Romance / Satire)</span>
+      <p>
+        A sharp, scandalous novella about a manipulative widow who plays love like a game of chess
