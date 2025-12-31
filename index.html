@@ -2,196 +2,157 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Ina's Book Hub — Welcome to the Bookverse!</title>
+  <title>Ina's Book Hub | Ina's Reading Space</title>
+  <meta name="description" content="This Book Hub is Mildred's personal space for book reviews, reading tips, and literary discoveries.">
   <style>
-    body { margin:0; font-family:Arial, sans-serif; }
+    /* ===== LIBRARY LIGHT MODE ===== */
+    body.library {
+      background-color: #ffffff; /* White background */
+      color: #000000; /* Black text */
+    }
 
-    /* Grid layout for books */
-    .library-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 16px;
+    body.library header,
+    body.library section {
+      background-color: #f5f5f5; /* Light grey blocks */
       padding: 20px;
-    }
-
-    /* Theme toggle icon */
-    .theme-toggle {
-      position: fixed;
-      top: 10px;
-      right: 10px;
-      background: none;
-      border: none;
-      font-size: 20px;
-      cursor: pointer;
-      opacity: 0.6;
-    }
-    .theme-toggle:hover { opacity: 1; }
-
-    /* Ad slot styling */
-    .ad-slot {
-      padding: 10px;
-      margin: 20px;
-      text-align: center;
       border-radius: 8px;
+      margin-bottom: 20px;
     }
 
-    /* Footer styling */
-    footer {
-      text-align: center;
-      padding: 20px;
-      font-size: 0.9em;
+    body.library h1,
+    body.library h2 {
+      color: #000000;
     }
-    footer a {
-      margin: 0 10px;
+
+    body.library a {
+      color: #333333;
       text-decoration: none;
-      color: inherit;
+      font-weight: bold;
     }
-    footer a:hover { text-decoration: underline; }
 
-    /* Palette 1: Dark Mode */
-    .dark-mode { background:#121212; color:#EAEAEA; }
-    .dark-mode header { background:#1E90FF; color:#fff; padding:20px; text-align:center; }
-    .dark-mode .btn { background:#BB86FC; color:#fff; padding:8px 12px; border:none; border-radius:6px; }
-    .dark-mode .book { background:#1E1E1E; color:#EAEAEA; padding:16px; border-radius:8px; }
-    .dark-mode .ad-slot { background:#1E1E1E; border:1px dashed #BB86FC; color:#BB86FC; }
-    .dark-mode footer { background:#1E1E1E; color:#BB86FC; }
+    body.library a:hover {
+      color: #555555;
+    }
 
-    /* Palette 2: Warm Library */
-    .library-mode { background:#F4EDE4; color:#3B2F2F; }
-    .library-mode header { background:#6B4226; color:#fff; padding:20px; text-align:center; }
-    .library-mode .btn { background:#A67C52; color:#fff; padding:8px 12px; border:none; border-radius:6px; }
-    .library-mode .book { background:#fff; color:#3B2F2F; padding:16px; border-radius:8px; }
-    .library-mode .ad-slot { background:#FDF6EC; border:1px dashed #A67C52; color:#6B4226; }
-    .library-mode footer { background:#FDF6EC; color:#6B4226; }
+    /* ===== LAVENDER LIGHT MODE ===== */
+    body.lavender {
+      background-color: #e6e6fa; /* Soft Lavender */
+      color: #333333; /* Charcoal text */
+    }
 
-    /* Palette 3: Professional */
-    .professional-mode { background:#F9FAFB; color:#111827; }
-    .professional-mode header { background:#2563EB; color:#fff; padding:20px; text-align:center; }
-    .professional-mode .btn { background:#374151; color:#fff; padding:8px 12px; border:none; border-radius:6px; }
-    .professional-mode .book { background:#fff; color:#111827; padding:16px; border-radius:8px; }
-    .professional-mode .ad-slot { background:#E5E7EB; border:1px dashed #2563EB; color:#2563EB; }
-    .professional-mode footer { background:#E5E7EB; color:#2563EB; }
+    body.lavender header,
+    body.lavender section {
+      background-color: #ffffff; /* White blocks */
+      padding: 20px;
+      border-radius: 8px;
+      margin-bottom: 20px;
+    }
 
-    /* Palette 4: Monochrome */
-    .monochrome-mode { background:#1C1C1C; color:#D1D5DB; }
-    .monochrome-mode header { background:#4B5563; color:#fff; padding:20px; text-align:center; }
-    .monochrome-mode .btn { background:#9CA3AF; color:#1C1C1C; padding:8px 12px; border:none; border-radius:6px; }
-    .monochrome-mode .book { background:#2C2C2C; color:#D1D5DB; padding:16px; border-radius:8px; }
-    .monochrome-mode .ad-slot { background:#2C2C2C; border:1px dashed #9CA3AF; color:#9CA3AF; }
-    .monochrome-mode footer { background:#2C2C2C; color:#9CA3AF; }
+    body.lavender h1,
+    body.lavender h2 {
+      color: #9370db; /* Medium Purple accents */
+    }
+
+    body.lavender a {
+      color: #9370db;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    body.lavender a:hover {
+      color: #6a5acd; /* Slate Blue hover */
+    }
+
+    /* ===== DARK MODE ===== */
+    body.dark {
+      background-color: #2F2F2F; /* Grey background */
+      color: #FFFFFF; /* White text */
+    }
+
+    body.dark header,
+    body.dark section {
+      background-color: #000000; /* Black blocks */
+      padding: 20px;
+      border-radius: 8px;
+      margin-bottom: 20px;
+    }
+
+    body.dark h1,
+    body.dark h2 {
+      color: #FFFFFF; /* White headers */
+    }
+
+    body.dark a {
+      color: #CCCCCC; /* Soft grey links */
+    }
+
+    body.dark a:hover {
+      color: #FFFFFF; /* White hover */
+    }
+
+    body.dark button {
+      background-color: #000000; /* Black button */
+      color: #FFFFFF;
+      border: 1px solid #CCCCCC;
+    }
+
+    body.dark button:hover {
+      background-color: #444444; /* Dark grey hover */
+    }
+
+    /* ===== BUTTONS ===== */
+    button {
+      margin: 5px;
+      padding: 10px 20px;
+      border-radius: 8px;
+      cursor: pointer;
+      border: none;
+    }
   </style>
 </head>
-<body>
-  <!-- Theme toggle icon (dynamic ☀️ / 🌙) -->
-  <button onclick="toggleTheme()" class="theme-toggle" id="themeIcon">☀️</button>
-
+<body class="library">
   <header>
-    <h1>📚 Ina's Book Hub</h1>
-    <p>Welcome to the Bookverse!</p>
-    <p><em>"Where every book finds its reader"</em></p>
+    <h1>Welcome to Ina's Book Hub 📚</h1>
+    <p>The Only Bookverse You Clearly Need, *winks 🎀✨</p>
+    <p>Curated by Ina — a space for readers, dreamers, and book lovers.</p>
   </header>
 
-  <!-- Top Ad Slot -->
-  <div class="ad-slot">
-    <p>Top Banner Ad / Announcement</p>
-  </div>
+  <section>
+    <h2>About Me</h2>
+    <p>Hi guys, this is my first web app — yay! It may not be perfect, but it's my baby.</p>
+    <p>As someone with no background in coding and its shenanigans, I'd like to think I did pretty good; and what better tiny app to build on than something I love: reading.</p>
+    <p>I'm Mildred, but I also go by Ina. I created this Book Hub to share my love for reading and to connect with others who enjoy discovering new stories. This site is my personal hub where I write reviews, share recommendations, and talk about the books that inspire me.</p>
+  </section>
 
-  <!-- Intro Section -->
-  <section class="intro">
-    <h2>About Ina's Book Hub</h2>
-    <p>
-      Ina's Book Hub is your gateway to the Bookverse — a curated collection of timeless classics and modern reads.
-      Explore, download, and enjoy books that inspire, educate, and entertain.
+  <section>
+    <h2>Featured Book of the Week</h2>
+    <p><strong>“Purple Hibiscus” by Chimamanda Ngozi Adichie</strong></p>
+    <p>This novel explores the harsh reality of family, faith, and freedom in Nigeria. I loved how the author captures the tension between tradition and independence. If you’re looking for a thought‑provoking read, this is a great place to start.</p>
+  </section>
+
+  <section>
+    <h2>Explore the Bookverse!</h2>
+    <p>Check out my web app: 
+       <a href="https://inaisthatbookishperson.github.io/Book-hub-/">
+         Ina's Book Hub
+       </a>
     </p>
   </section>
 
-  <!-- README Section -->
-  <section class="readme">
-    <h2>📖 Read Me</h2>
-    <ul>
-      <li>Browse the library grid below to find books.</li>
-      <li>Use the search bar to filter by title or description.</li>
-      <li>Click “Download PDF” to get your copy instantly.</li>
-      <li>Check back often — new books are added regularly!</li>
-    </ul>
+  <section>
+    <h2>Contact</h2>
+    <p>Want to collaborate or share recommendations? Reach out via <a href="mailto:egimildred@gmail.com">email</a>.</p>
   </section>
 
-  <!-- Library Grid -->
-  <section class="library-grid">
-    <div class="book">
-      <h2>Pride and Prejudice</h2>
-      <p>Jane Austen’s timeless classic about love, society, and self-discovery.</p>
-      <button class="btn">Download PDF</button>
-    </div>
-
-    <div class="book">
-      <h2>1984</h2>
-      <p>George Orwell’s dystopian masterpiece exploring surveillance and freedom.</p>
-      <button class="btn">Download PDF</button>
-    </div>
-
-    <div class="book">
-      <h2>To Kill a Mockingbird</h2>
-      <p>Harper Lee’s powerful novel on justice, race, and compassion.</p>
-      <button class="btn">Download PDF</button>
-    </div>
-
-    <div class="book">
-      <h2>The Great Gatsby</h2>
-      <p>F. Scott Fitzgerald’s tale of ambition, love, and the American Dream.</p>
-      <button class="btn">Download PDF</button>
-    </div>
-  </section>
-
-  <!-- Mid-Page Ad Slot -->
-  <div class="ad-slot">
-    <p>Mid‑Page Ad / Featured Book Promo</p>
-  </div>
-
-  <!-- Sidebar Ad Slot -->
-  <div class="ad-slot">
-    <p>Sidebar Ad / Special Offer</p>
-  </div>
-
-  <!-- Bottom Ad Slot -->
-  <div class="ad-slot">
-    <p>Bottom Banner Ad / Announcement</p>
-  </div>
-
-  <!-- Footer -->
-  <footer>
-    <p>© 2025 Ina's Book Hub. All rights reserved.</p>
-    <p>
-      <a href="#about">About</a> |
-      <a href="#library">Library</a> |
-      <a href="#contact">Contact</a>
-    <p>Return to my main site: 
-   <a href="https://inaisthatbookishperson.github.io">
-     Mildred’s Homepage
-   </a>
-    </p>
-  </footer>
+  <!-- Theme Switcher Buttons -->
+  <button onclick="setTheme('library')">📖 Library Light</button>
+  <button onclick="setTheme('lavender')">🌸 Lavender Light</button>
+  <button onclick="setTheme('dark')">🌙 Dark Mode</button>
 
   <script>
-    const themes = ["dark-mode", "library-mode", "professional-mode", "monochrome-mode"];
-    let current = 0;
-
-    function toggleTheme() {
-      document.body.classList.remove(themes[current]);
-      current = (current + 1) % themes.length;
-      document.body.classList.add(themes[current]);
-
-      // Update icon based on theme
-      const icon = document.getElementById("themeIcon");
-      if (themes[current] === "dark-mode" || themes[current] === "monochrome-mode") {
-        icon.textContent = "🌙";
-      } else {
-        icon.textContent = "☀️";
-      }
+    function setTheme(theme) {
+      document.body.className = theme;
     }
-
-    // Set initial theme
-    document.body.classList.add(themes[current]);
   </script>
 </body>
 </html>
